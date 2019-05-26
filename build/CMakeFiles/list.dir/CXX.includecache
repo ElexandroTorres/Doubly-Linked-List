@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elexandro/Documentos/Doubly-Linked-List/include/list.h
+
+/home/elexandro/Documentos/Doubly-Linked-List/src/main.cpp
+iostream
+-
+../include/list.h
+/home/elexandro/Documentos/Doubly-Linked-List/include/list.h
+
