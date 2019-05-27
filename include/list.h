@@ -75,6 +75,20 @@ namespace ls {
 				temp->prev = newNode;
 				m_size++;
 			}
+			/*!
+			 * Adiciona um determinado valor no final da lista.
+			 * @param value Valor a ser adicionado no final da lista.
+			*/
+			void push_back(const T &value) {
+				Node *temp = m_tail->prev;
+				Node *newNode = new Node(value, temp, m_tail);
+				m_tail->prev = newNode;
+				temp->next = newNode;
+				m_size++;
+			}
+			/*!
+			 * Remove o elemento no final da lista.
+			*/
 			void pop_back() {
 				if(m_tail->prev != m_head) {
 					Node *temp = m_tail->prev;
@@ -84,6 +98,51 @@ namespace ls {
 					temp->next = m_tail;
 					m_tail->prev = temp;
 					m_size--;
+				}
+			}
+			/*!
+			 * Remove o elemento no inicio da lista.
+			*/
+			void pop_front() {
+				if(m_head->next != m_tail) {
+					Node *temp = m_head->next;
+					Node *target = m_head->next;
+					temp = temp->next;
+					delete target;
+					temp->prev = m_head;
+					m_head->next = temp;
+					m_size--;
+				}
+			}
+			/*!
+			 * @return O elemento no final da lista.
+			*/
+			const T &back() const {
+				if(m_tail->prev != m_head) {
+					Node *target = m_tail->prev;
+					return target->data;
+				}
+				//retornar alguma coisa.
+			}
+			/*!
+			 * @return O elemento no inicio da lista.
+			*/
+			const T &front() const {
+				if(m_head->next != m_tail) {
+					Node *target = m_head->next;
+					return target->data;
+				}
+				//retornar alguma coisa.
+			}
+			/*!
+			 * Substituio conteudo da lista com uma certa quantiade de uma determinado valor.
+			 * @param count Quantidade de elementos que terão na lista.
+			 * @param value Valor que será inserido em toda a lista.
+			*/
+			void assign(const size_type &count, const T &value) {
+				clear();
+				for(size_type i = 0; i < count; i++) {
+					push_back(value);
 				}
 			}
 			//imprime a lista.
