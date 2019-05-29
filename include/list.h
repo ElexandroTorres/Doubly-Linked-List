@@ -1,7 +1,7 @@
 #ifndef LIST_H
 #define LIST_H
 
-namespace ls {
+namespace sc {
 	template<typename T>
 	class list {
 		private:
@@ -19,22 +19,69 @@ namespace ls {
 			};
 
 		public:
+			/* Iterators */
+
+			/// Iterator
+			class iterator{
+				public:
+					/// Construtor padrão.
+					iterator(Node *it = nullptr) {
+						current = it;
+					}
+
+					iterator &operator++() {
+						current = current->next;
+						return *this;
+					}
+
+					iterator &operator--() {
+						current = current->prev;
+						return *this;
+					}
+
+					T &operator*() {
+						return current->data;
+					}
+
+					bool operator==(const iterator &rhs) const {
+						return current == rhs.current;
+					}
+					bool operator!=(const iterator &rhs) const {
+						return !(current == rhs.current);
+					}
+
+				private:
+					Node *current; //<! Ponteiro para nó.
+					
+			};
+
+
 			/// Construtor padrão.
 			list() {
 				m_head = new Node();
 				m_tail = new Node();
 				m_head->next = m_tail;
-				m_head->prev = nullptr;
-				m_tail->next = nullptr;
+				//m_head->prev = nullptr;
+				//m_tail->next = nullptr;
 				m_tail->prev = m_head;
 				m_size = 0;
+			}
+			/// Construtor com lista inicializadora.
+			list(std::initializer_list<T> ilist) {
+				m_head = new Node();
+				m_tail = new Node();
+				m_head->next = m_tail;
+				m_tail->prev = m_head;
+
+				for(auto it = ilist.begin(); it != ilist.end(); it++) {
+					push_back(*it);
+				}	
+				
 			}
 			/// Destrutor.
 			~list() {
 				// Remover todos os nós.
-				while(m_head->next != m_tail) {
-					pop_back();
-				}
+				clear();
 				// Por fim remover o head e o tail.
 				delete m_head;
 				delete m_tail;
@@ -145,6 +192,21 @@ namespace ls {
 					push_back(value);
 				}
 			}
+
+			/* Operations with iterators */
+
+			/*!
+			 * @return Um iterator para o inicio da lista.
+			*/
+			iterator begin() {
+				return iterator(m_head->next); // Retorna um iterator para o elemento seguinte ao m_head.
+			}
+			/*!
+			 * @return Um iterator para o final da lista. m_tail.
+			*/
+			iterator end() {
+				return iterator(m_tail);
+			}
 			//imprime a lista.
 			void print() {
 				Node *it = m_head->next;
@@ -160,8 +222,7 @@ namespace ls {
 			size_type m_size;
 			Node *m_head;
 			Node *m_tail;
-			
-			
+						
 	};
 }
 
