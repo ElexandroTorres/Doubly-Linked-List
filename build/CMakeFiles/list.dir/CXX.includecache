@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/elexandro/Documentos/Doubly-Linked-List/include/list.h
+../include/list.h
 
 /home/elexandro/Documentos/Doubly-Linked-List/src/main.cpp
 iostream
 -
-../include/list.h
-/home/elexandro/Documentos/Doubly-Linked-List/include/list.h
+cassert
+-
+list.h
+/home/elexandro/Documentos/Doubly-Linked-List/src/list.h
 

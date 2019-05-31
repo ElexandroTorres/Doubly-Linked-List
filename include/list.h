@@ -74,6 +74,7 @@ namespace sc {
 
 				private:
 					Node *current; //<! Ponteiro para nó.
+
 					
 			};
 			/// Cons_Iterator
@@ -133,6 +134,10 @@ namespace sc {
 				for(size_type i = 0; i < count; i++) {
 					push_back(int()); // Cria um nó e o inicia com o tipo inteiro padrão.
 				}
+			}
+			/// Construtor copia.
+			list(const list &other) {
+				*this = other;
 			}
 			/// Construtor with range.
 			template<typename InputIt>
@@ -282,6 +287,30 @@ namespace sc {
 			iterator end() {
 				return iterator(m_tail);
 			}
+			const_iterator begin() const {
+				return const_iterator(m_head->next);
+			}
+			const_iterator end() const {
+				return const_iterator(m_tail);
+			}
+
+			//*****************
+
+			iterator insert(iterator pos, const T &value) {
+				iterator it = begin();
+				Node *temp = m_head;
+				//inserção em o(n)
+				while(it != pos) {
+					temp = temp->next;
+					it++;
+				}
+
+				Node *newNode = new Node(value, temp, temp->next);
+				temp->next = newNode;
+				m_size++;
+				
+			}
+			
 			//imprime a lista.
 			void print() {
 				Node *it = m_head->next;
@@ -290,6 +319,32 @@ namespace sc {
 					it = it->next;
 				}
 				std::cout << "\n";
+			}
+
+			list &operator=(const list &other) {
+				// Verifica se são diferentes.
+				if(*this != other) {
+					clear(); // Limpa a lista.
+					Node *temp1 = other.m_head;
+					temp1 = temp1->next;
+					//chegar ao final.
+					while(temp1 != other.m_tail) {
+						push_back(temp1->data);
+						temp1 = temp1->next;
+					}
+
+				}
+				return *this;
+			}
+
+			list &operator=(std::initializer_list<T> ilist) {
+				clear();
+				auto ilistTemp = ilist.begin();
+				while(ilistTemp != ilist.end()) {
+					push_back(*ilistTemp);
+					ilistTemp++;
+				}
+				return *this;
 			}
 
 			bool operator==(const list &other) {
