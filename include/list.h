@@ -18,25 +18,47 @@ namespace sc {
 				}
 			};
 
+			/*! Cria os nós principais da lista duplamente encadeada. Nó cabeça e Nó Calda. */
+			void create_mainNodes() {
+				m_head = new Node();
+				m_tail = new Node();
+				m_head->next = m_tail;
+				m_tail->prev = m_head;
+			}
+
+
+
 		public:
 			/* Iterators */
 
 			/// Iterator
-			class iterator{
+			class iterator {
 				public:
 					/// Construtor padrão.
 					iterator(Node *it = nullptr) {
 						current = it;
 					}
-
+					/*! Pré incremento. Avança o iterador para o proximo nó.*/
 					iterator &operator++() {
 						current = current->next;
 						return *this;
 					}
-
+					/*! Pós incremento. Avança o iterador para o proximo nó.*/
+					iterator operator++(int) {
+						iterator temp = current;
+						current = current->next;
+						return temp;
+					}
+					/*! Pré decremento. Regride o iterador para o nó anterior.*/
 					iterator &operator--() {
 						current = current->prev;
 						return *this;
+					}
+					/*! Pós decremento. Regride o iterador para o nó anterior.*/
+					iterator operator--(int) {
+						iterator temp = current;
+						current = current->prev;
+						return temp;
 					}
 
 					T &operator*() {
@@ -54,30 +76,83 @@ namespace sc {
 					Node *current; //<! Ponteiro para nó.
 					
 			};
+			/// Cons_Iterator
+			class const_iterator {
+				public:
+					/// Construtor padrão.
+					const_iterator(Node *it = nullptr) {
+						current = it;
+					}
+					/*! Pré incremento. Avança o iterador para o proximo nó.*/
+					const_iterator &operator++() {
+						current = current->next;
+						return *this;
+					}
+					/*! Pós incremento. Avança o iterador para o proximo nó.*/
+					const_iterator operator++(int) {
+						const_iterator temp = current;
+						current = current->next;
+						return temp;
+					}
+					/*! Pré decremento. Regride o iterador para o nó anterior.*/
+					const_iterator &operator--() {
+						current = current->prev;
+						return *this;
+					}
+					/*! Pós decremento. Regride o iterador para o nó anterior.*/
+					const_iterator operator--(int) {
+						const_iterator temp = current;
+						current = current->prev;
+						return temp;
+					}
+
+					T &operator*() {
+						return current->data;
+					}
+
+					bool operator==(const const_iterator &rhs) const {
+						return current == rhs.current;
+					}
+					bool operator!=(const const_iterator &rhs) const {
+						return !(current == rhs.current);
+					}
+
+				private:
+					const Node *current; //<! Ponteiro para nó.
+					
+			};
 
 
 			/// Construtor padrão.
 			list() {
-				m_head = new Node();
-				m_tail = new Node();
-				m_head->next = m_tail;
-				//m_head->prev = nullptr;
-				//m_tail->next = nullptr;
-				m_tail->prev = m_head;
-				m_size = 0;
+				create_mainNodes(); // Cria os nós cabeça e calda da lista.
+			}
+			/// Construtor explicit.
+			explicit list(size_type count) {
+				create_mainNodes();
+				for(size_type i = 0; i < count; i++) {
+					push_back(int()); // Cria um nó e o inicia com o tipo inteiro padrão.
+				}
+			}
+			/// Construtor with range.
+			template<typename InputIt>
+			list(InputIt first, InputIt last) {
+				create_mainNodes();
+				while(first != last) {
+					push_back(*first);
+					first++;
+				}
 			}
 			/// Construtor com lista inicializadora.
 			list(std::initializer_list<T> ilist) {
-				m_head = new Node();
-				m_tail = new Node();
-				m_head->next = m_tail;
-				m_tail->prev = m_head;
-
-				for(auto it = ilist.begin(); it != ilist.end(); it++) {
-					push_back(*it);
-				}	
-				
+				create_mainNodes();
+				auto ilistTemp = ilist.begin();
+				while(ilistTemp != ilist.end()) {
+					push_back(*ilistTemp);
+					ilistTemp++;
+				}
 			}
+
 			/// Destrutor.
 			~list() {
 				// Remover todos os nós.
@@ -217,13 +292,41 @@ namespace sc {
 				std::cout << "\n";
 			}
 
+			bool operator==(const list &other) {
+				// Verificar se as listas possuem tamanhos diferentes. Caso sim, elas são diferentes.
+				if(other.m_size != m_size) {
+					return false;
+				}
+				// Caso tenham o mesmo tamanho, comparar todos os nós para verificar se possuem elementos diferentes.
+				Node *temp1 = m_head;
+				Node *temp2 = other.m_head;
+
+				while(temp1 != m_tail) {
+					temp1 = temp1->next;
+					temp2 = temp2->next;
+					// Caso encontre algum valor diferente na mesma posição que na outra lista, elas são diferentes.
+					if(temp1->data != temp2->data) {
+						return false;
+					}
+				}
+				// Caso passe por todos os testes acima e não tenha sido invalidado a igualdade elas são iguais.
+				return true;
+
+			}
+
+			bool operator!=(const list &other) {
+				return !(*this == other); // Caso as listas não sejam iguais elas são diferentes.
+			}
+
 
 		private:
-			size_type m_size;
+			size_type m_size = 0; // Toda lista criada tem inicialmente tamanho zero.
 			Node *m_head;
 			Node *m_tail;
 						
 	};
+	
+
 }
 
 #endif
