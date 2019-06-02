@@ -16,6 +16,8 @@ namespace sc {
 					prev = prev_;
 					next = next_;
 				}
+
+
 			};
 
 			/*! Cria os nós principais da lista duplamente encadeada. Nó cabeça e Nó Calda. */
@@ -30,99 +32,114 @@ namespace sc {
 
 		public:
 			/* Iterators */
-
-			/// Iterator
-			class iterator {
+			/// Const_Iterator
+			class const_iterator {
 				public:
-					/// Construtor padrão.
-					iterator(Node *it = nullptr) {
-						current = it;
-					}
-					/*! Pré incremento. Avança o iterador para o proximo nó.*/
-					iterator &operator++() {
-						current = current->next;
-						return *this;
-					}
-					/*! Pós incremento. Avança o iterador para o proximo nó.*/
-					iterator operator++(int) {
-						iterator temp = current;
-						current = current->next;
-						return temp;
-					}
-					/*! Pré decremento. Regride o iterador para o nó anterior.*/
-					iterator &operator--() {
-						current = current->prev;
-						return *this;
-					}
-					/*! Pós decremento. Regride o iterador para o nó anterior.*/
-					iterator operator--(int) {
-						iterator temp = current;
-						current = current->prev;
-						return temp;
-					}
+					const_iterator() : current{nullptr} {/* Vazio.*/}
 
-					T &operator*() {
+					const T &operator*() const {
 						return current->data;
 					}
 
-					bool operator==(const iterator &rhs) const {
-						return current == rhs.current;
-					}
-					bool operator!=(const iterator &rhs) const {
-						return !(current == rhs.current);
-					}
-
-				private:
-					Node *current; //<! Ponteiro para nó.
-
-					
-			};
-			/// Cons_Iterator
-			class const_iterator {
-				public:
-					/// Construtor padrão.
-					const_iterator(Node *it = nullptr) {
-						current = it;
-					}
-					/*! Pré incremento. Avança o iterador para o proximo nó.*/
 					const_iterator &operator++() {
 						current = current->next;
 						return *this;
 					}
-					/*! Pós incremento. Avança o iterador para o proximo nó.*/
+
 					const_iterator operator++(int) {
-						const_iterator temp = current;
-						current = current->next;
+						const_iterator temp = *this;
+						++(*this);
 						return temp;
 					}
-					/*! Pré decremento. Regride o iterador para o nó anterior.*/
+
 					const_iterator &operator--() {
 						current = current->prev;
 						return *this;
 					}
-					/*! Pós decremento. Regride o iterador para o nó anterior.*/
+
 					const_iterator operator--(int) {
-						const_iterator temp = current;
-						current = current->prev;
+						const_iterator temp = *this;
+						--(*this);
 						return temp;
 					}
 
-					T &operator*() {
-						return current->data;
+					const_iterator &operator=(const const_iterator &it) {
+						current = it.current;
+						return *this;
 					}
 
 					bool operator==(const const_iterator &rhs) const {
 						return current == rhs.current;
 					}
 					bool operator!=(const const_iterator &rhs) const {
-						return !(current == rhs.current);
+						return !(*this == rhs);
 					}
 
-				private:
-					const Node *current; //<! Ponteiro para nó.
-					
-			};
+				protected:
+					Node *current;
 
+					const_iterator(Node *p) : current{p} {/*vazio.*/}
+
+					friend class list<T>;
+
+			};
+			/// Iterator
+			class iterator {
+				public:
+					iterator() : current{nullptr} { }
+
+					T &operator*() {
+						return current->data;
+					}
+
+					const T &operator*() const {
+						return current->data;
+					}
+
+					iterator &operator++() {
+						current = current->next;
+						return *this;
+					}
+
+					iterator operator++(int) {
+						iterator temp = *this;
+						++(*this);
+						return temp;
+					}
+
+					iterator &operator--() {
+						current = current->prev;
+						return *this;
+					}
+
+					iterator operator--(int) {
+						iterator temp = *this;
+						--(*this);
+						return temp;
+					}
+
+					iterator &operator=(const iterator &it) {
+						current = it.current;
+						return *this;
+					}
+
+					bool operator==(const iterator &rhs) const {
+						return current == rhs.current;
+					}
+					bool operator!=(const iterator &rhs) const {
+						return !(*this == rhs);
+					}
+					
+					
+				protected:
+
+					Node *current;
+
+					iterator(Node *p) : current{p} {/*vazio.*/}
+
+					friend class list<T>;
+
+			};
 
 			/// Construtor padrão.
 			list() {
@@ -279,24 +296,25 @@ namespace sc {
 			 * @return Um iterator para o inicio da lista.
 			*/
 			iterator begin() {
-				return iterator(m_head->next); // Retorna um iterator para o elemento seguinte ao m_head.
+				return m_head->next; // Retorna um iterator para o elemento seguinte ao m_head.
 			}
 			/*!
 			 * @return Um iterator para o final da lista. m_tail.
 			*/
 			iterator end() {
-				return iterator(m_tail);
+				return m_tail;
 			}
-			const_iterator begin() const {
-				return const_iterator(m_head->next);
+			const_iterator cbegin() const {
+				return m_head->next;
 			}
-			const_iterator end() const {
-				return const_iterator(m_tail);
+			const_iterator cend() const {
+				return m_tail;
 			}
 
 			//*****************
 
 			iterator insert(iterator pos, const T &value) {
+				/*
 				iterator it = begin();
 				Node *temp = m_head;
 				//inserção em o(n)
@@ -308,8 +326,27 @@ namespace sc {
 				Node *newNode = new Node(value, temp, temp->next);
 				temp->next = newNode;
 				m_size++;
-				
+				*/
+				Node *temp = pos.current;
+				Node *aux = temp->prev;
+				aux->next = new Node(value, aux, temp);
+				temp->prev = aux->next;
+				//p->prev->next = new Node(value, p->prev, p);
+				//p->prev = p->prev->next;
+				m_size++;
+
+				return aux->next;
 			}
+
+			template<typename InItr>
+			iterator insert(iterator pos, InItr first, InItr last) {
+				while(first != last) {
+					insert(pos, *first);
+					first++;
+					
+				}
+			}
+			
 			
 			//imprime a lista.
 			void print() {

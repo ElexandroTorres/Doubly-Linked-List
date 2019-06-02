@@ -17,7 +17,7 @@ int main() { {
 	
 	*/
 
-	//
+	/*
 	std::cout << "teste comparação: \n";
 	if(lista1 != lista2) {
 		std::cout << "As listas são diferentes.\n";
@@ -37,7 +37,7 @@ int main() { {
 	else {
 		std::cout << "As listas são iguais.\n";
 	}
-
+	*/
 	lista1 = {1, 2, 3, 4, 2, 2, 2, 2};
 	sc::list<int>::iterator it;
 	it = lista1.begin();
@@ -45,17 +45,17 @@ int main() { {
 	it++;
 	it++;
 	it++;
-	it++;
-	it++;
-	it++;
-	it++;
-	it++;
-	it++;
-	it++;
-	lista1.insert(it, 88);
+	//it++;
+	//it++;
+	//it++;
+	//it++;
+	//it++;
+	//it++;
+	//it++;
+	//lista1.insert(it, 88);
 
-	lista1.print();
-	std::cout << "lista1 tamanho> " << lista1.size() << "\n";
+	//lista1.print();
+	//std::cout << "lista1 tamanho> " << lista1.size() << "\n";
 
 }	
 	return 0;
