@@ -1,3 +1,0 @@
-/home/xaninho/Documentos/Doubly-Linked-List/build/CMakeFiles/rebuild_cache.dir
-/home/xaninho/Documentos/Doubly-Linked-List/build/CMakeFiles/list.dir
-/home/xaninho/Documentos/Doubly-Linked-List/build/CMakeFiles/edit_cache.dir

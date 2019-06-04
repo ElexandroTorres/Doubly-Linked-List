@@ -148,6 +148,11 @@ namespace sc {
 						current = it.current;
 						return *this;
 					}
+					/*! Operator =, atribuí um const_iterator a um iterator. */ 
+					iterator &operator=(const const_iterator &it) {
+						current = it.current;
+						return *this;
+					}
 					/*! Compara dois iteradores. 
 					 * @return true caso sejam iguais e false caso contrario. 
 					*/
@@ -339,7 +344,7 @@ namespace sc {
 				}
 			}
 			/*!
-			 * Substituio conteudo da lista com uma certa quantiade de uma determinado valor.
+			 * Substitui o conteudo da lista com uma certa quantiade de uma determinado valor.
 			 * @param count Quantidade de elementos que terão na lista.
 			 * @param value Valor que será inserido em toda a lista.
 			*/
@@ -391,6 +396,8 @@ namespace sc {
 
 			/* Insert */
 
+			/* Iterator versions */
+
 			/*!
 			 * Insere um elemento antes da posição pos.
 			 * @param pos Iterator para a posição a qual o elemento adicionado irá precedela.
@@ -434,6 +441,59 @@ namespace sc {
 				}
 				return pos;
 			}
+
+			/* Const_Iterator versions */
+			
+			/*!
+			 * Insere um elemento antes da posição pos.
+			 * @param pos Iterator para a posição a qual o elemento adicionado irá precedela.
+			 * @param value Valor a qual será adicionado na lista.
+			 * @return Um iterator para a posição em que o elemento foi adicionado.
+			*/
+			const_iterator insert(const_iterator pos, const T &value) {
+				Node *temp = pos.current; // Posição do const_iterator.
+				Node *aux = temp->prev;
+				aux->next = new Node(value, aux, temp);
+				temp->prev = aux->next;
+				m_size++;
+				return aux->next;
+			}
+			/*!
+			 * Insere um range de elementos antes da posição pos.
+			 * @param pos Posição a qual os elementos adicionados irão presceder.
+			 * @param first Inicio do range de elementos.
+			 * @param last Final do range de elementos.
+			 * @return const_iterator para o ultimo elemento do range na lista.
+			*/
+			template<typename InItr>
+			const_iterator insert(const_iterator pos, InItr first, InItr last) {
+				while(first != last) {
+					insert(pos, *first);
+					first++;
+				}
+				return pos;
+			}
+			/*!
+			 * Insere uma lista inicializadora de elementos antes da posição pos.
+			 * @param pos Posição a qual os elementos adicionados irão presceder.
+			 * @param ilist Lista inicializadora.
+			 * @return const_iterator para o ultimo da lista inicializadora na lista.
+			*/
+			const_iterator insert(const_iterator pos, std::initializer_list<T> ilist) {
+				auto ilistTemp = ilist.begin();
+				while(ilistTemp != ilist.end()) {
+					insert(pos, *ilistTemp);
+					ilistTemp++;
+				}
+				return pos;
+			}
+
+			/* Fim Insert */
+
+			/* Erase */
+
+			/* Iterator versions */
+
 			/*!
 			 * Apaga um elemento da lista dado pela posição pos.
 			 * @param pos Iterator para a posiçao a qual o elemento será apagado.
@@ -462,6 +522,37 @@ namespace sc {
 				return last;
 			}
 
+			/* Const_Iterator versions */
+
+			/*!
+			 * Apaga um elemento da lista dado pela posição pos.
+			 * @param pos Iterator para a posiçao a qual o elemento será apagado.
+			 * @return Elemento seguinte a pos antes de ser apagado.
+			*/
+			const_iterator erase(const_iterator pos) {
+				Node *target = pos.current; // Salva a posição atual.
+				Node *prevTemp = target->prev; // Salva o nó que o antecede.
+				Node *nextTemp = target->next; // Salva o nó que o prescede.
+				delete target; 
+				prevTemp->next = nextTemp; // Liga o nó que o sucedia ao que o prescendia.
+				nextTemp->prev = prevTemp; // Liga o nó que o prescendia ao que o sucedia. 
+				m_size--; // Diminui o tamanho da lista.
+				return nextTemp; // Nó seguinte a pós antes de ser apagado.
+			}
+			/*!
+			 * Remove os elementos da lista que estão no range dado.
+			 * @param first const_iterator para o inicio do range.
+			 * @param last const_iterator para o final do range.
+			 * @return Elemento seguinte ao range apagado.
+			*/
+			const_iterator erase(const_iterator first, const_iterator last) {
+				while(first != last) {
+					first = erase(first);
+				}
+				return last;
+			}
+
+			/* Fim erase */
 
 			/*!
 			 * Procura um determinado valor na lista.
@@ -479,7 +570,9 @@ namespace sc {
 				}
 				return m_tail;
 			}
-			
+
+			/* Operadores de comparação */
+
 			/*!
 			 * Compara duas listas.
 			 * @return true caso sejam iguais e false caso contrario.
@@ -503,7 +596,6 @@ namespace sc {
 				}
 				// Caso passe por todos os testes acima e não tenha sido invalidado a igualdade elas são iguais.
 				return true;
-
 			}
 			/*!
 			 * Compara duas listas.
@@ -512,7 +604,6 @@ namespace sc {
 			bool operator!=(const list &other) {
 				return !(*this == other); // Caso as listas não sejam iguais elas são diferentes.
 			}
-
 			/*! Operador de impressão. */
 			friend std::ostream &operator<<(std::ostream &out, const list<T> &l) {
 				Node *it = l.m_head->next;
@@ -528,9 +619,8 @@ namespace sc {
 			Node *m_head; // Ponteiro nó cabeça.
 			Node *m_tail; // Ponteiro nó calda.
 						
-	};
+	}; // Final classe list.
 
-
-}
+} // Final namespace.
 
 #endif

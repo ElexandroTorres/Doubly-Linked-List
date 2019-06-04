@@ -1,0 +1,185 @@
+\hypertarget{classsc_1_1list_1_1iterator}{}\section{sc\+:\+:list$<$ T $>$\+:\+:iterator Class Reference}
+\label{classsc_1_1list_1_1iterator}\index{sc\+::list$<$ T $>$\+::iterator@{sc\+::list$<$ T $>$\+::iterator}}
+
+
+Iterator.  
+
+
+
+
+{\ttfamily \#include $<$list.\+h$>$}
+
+
+
+Collaboration diagram for sc\+:\+:list$<$ T $>$\+:\+:iterator\+:
+% FIG 0
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_af129e3c7d5ec8db6bdf6d5fab7d8cb02}\label{classsc_1_1list_1_1iterator_af129e3c7d5ec8db6bdf6d5fab7d8cb02}} 
+using {\bfseries reference} = T \&
+\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_a36d0809808331ca636e2bd8d6e261f5a}\label{classsc_1_1list_1_1iterator_a36d0809808331ca636e2bd8d6e261f5a}} 
+using {\bfseries difference\+\_\+type} = std\+::ptrdiff\+\_\+t
+\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_acc4db8147f70e8e8a940ba0f24bf81de}\label{classsc_1_1list_1_1iterator_acc4db8147f70e8e8a940ba0f24bf81de}} 
+using {\bfseries iterator\+\_\+category} = std\+::bidirectional\+\_\+iterator\+\_\+tag
+\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_a163e81ef81bcd38779b49d50b2f697c0}\label{classsc_1_1list_1_1iterator_a163e81ef81bcd38779b49d50b2f697c0}} 
+using \hyperlink{classsc_1_1list_1_1iterator_a163e81ef81bcd38779b49d50b2f697c0}{value\+\_\+type} = T
+\begin{DoxyCompactList}\small\item\em Tipo de dado. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_af4d0fd9da7a49ba326b36c39b95a70b9}\label{classsc_1_1list_1_1iterator_af4d0fd9da7a49ba326b36c39b95a70b9}} 
+using \hyperlink{classsc_1_1list_1_1iterator_af4d0fd9da7a49ba326b36c39b95a70b9}{pointer} = T $\ast$
+\begin{DoxyCompactList}\small\item\em Ponteiro para o tipo de dado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsc_1_1list_1_1iterator_acd90feec03d8a2762f36407a27166bb9}{iterator} ()
+\item 
+\hyperlink{classsc_1_1list_1_1iterator_a730c236b34c3ffc4ec7bc40879df9b50}{iterator} (const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&other)
+\item 
+const T \& \hyperlink{classsc_1_1list_1_1iterator_a8e1feb979567a3fa27add54563d0008f}{operator$\ast$} () const
+\item 
+T \& \hyperlink{classsc_1_1list_1_1iterator_a2d9470370fc14c2a37ae35e52a086a6c}{operator$\ast$} ()
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \& \hyperlink{classsc_1_1list_1_1iterator_aed5c46c8e0c470a9eccb5e47d0c80f4c}{operator++} ()
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_1_1iterator_aa4c960f7ec3b2914da2fdbf24ae18412}{operator++} (int)
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \& \hyperlink{classsc_1_1list_1_1iterator_abf189d629eae1b86654039bc923f3979}{operator-\/-\/} ()
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_1_1iterator_ae5780db46cc0e71abd3b8be55daddded}{operator-\/-\/} (int)
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \& \hyperlink{classsc_1_1list_1_1iterator_aeb95f54e13863b315eea336de990cd62}{operator=} (const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&it)
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \& \hyperlink{classsc_1_1list_1_1iterator_a66f47dc6653a1c2cf0ffe5d4014cb7db}{operator=} (const \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \&it)
+\item 
+bool \hyperlink{classsc_1_1list_1_1iterator_a26eaacd8583e5d26a65cd6f6ef31f2bb}{operator==} (const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&rhs) const
+\item 
+bool \hyperlink{classsc_1_1list_1_1iterator_aa8328f0336cb54e2c2fbd3925db7e88b}{operator!=} (const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&rhs) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_a818795d7651516a93e563f3229e86351}\label{classsc_1_1list_1_1iterator_a818795d7651516a93e563f3229e86351}} 
+{\bfseries iterator} (Node $\ast$p)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_a165fb1acaddae6f401cf352a451de1ed}\label{classsc_1_1list_1_1iterator_a165fb1acaddae6f401cf352a451de1ed}} 
+Node $\ast$ {\bfseries current}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_ab6cf03d50c50087700b0fb872accfa7b}\label{classsc_1_1list_1_1iterator_ab6cf03d50c50087700b0fb872accfa7b}} 
+class {\bfseries list$<$ T $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class sc\+::list$<$ T $>$\+::iterator}
+
+Iterator. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_acd90feec03d8a2762f36407a27166bb9}\label{classsc_1_1list_1_1iterator_acd90feec03d8a2762f36407a27166bb9}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{iterator()}{iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construtor padrão. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_a730c236b34c3ffc4ec7bc40879df9b50}\label{classsc_1_1list_1_1iterator_a730c236b34c3ffc4ec7bc40879df9b50}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{iterator()}{iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::iterator (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construtor copia. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_aa8328f0336cb54e2c2fbd3925db7e88b}\label{classsc_1_1list_1_1iterator_aa8328f0336cb54e2c2fbd3925db7e88b}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compara dois iteradores constantes. \begin{DoxyReturn}{Returns}
+true caso sejam diferentes e false caso contrario. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_1_1iterator_a8e1feb979567a3fa27add54563d0008f}\label{classsc_1_1list_1_1iterator_a8e1feb979567a3fa27add54563d0008f}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retorna uma referencia constante para o dado do iterator. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_a2d9470370fc14c2a37ae35e52a086a6c}\label{classsc_1_1list_1_1iterator_a2d9470370fc14c2a37ae35e52a086a6c}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retorna uma referencia para o dado do iterator, assim possibilitando a sua alteração. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_aed5c46c8e0c470a9eccb5e47d0c80f4c}\label{classsc_1_1list_1_1iterator_aed5c46c8e0c470a9eccb5e47d0c80f4c}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator}\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator++, avança para o proximo nó. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_aa4c960f7ec3b2914da2fdbf24ae18412}\label{classsc_1_1list_1_1iterator_aa4c960f7ec3b2914da2fdbf24ae18412}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator++, Avança para o proximo nó, mas retorna a posição antes de avançada. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_abf189d629eae1b86654039bc923f3979}\label{classsc_1_1list_1_1iterator_abf189d629eae1b86654039bc923f3979}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator}\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator--, Regride para o nó anterior. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_ae5780db46cc0e71abd3b8be55daddded}\label{classsc_1_1list_1_1iterator_ae5780db46cc0e71abd3b8be55daddded}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator--, Regride para o nó anterior, mas retorna a posição antes da regreção. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_aeb95f54e13863b315eea336de990cd62}\label{classsc_1_1list_1_1iterator_aeb95f54e13863b315eea336de990cd62}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator}\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator =, Atribuí um iterator a outro. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_a66f47dc6653a1c2cf0ffe5d4014cb7db}\label{classsc_1_1list_1_1iterator_a66f47dc6653a1c2cf0ffe5d4014cb7db}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator}\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \&}]{it }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operator =, atribuí um \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} a um iterator. \mbox{\Hypertarget{classsc_1_1list_1_1iterator_a26eaacd8583e5d26a65cd6f6ef31f2bb}\label{classsc_1_1list_1_1iterator_a26eaacd8583e5d26a65cd6f6ef31f2bb}} 
+\index{sc\+::list\+::iterator@{sc\+::list\+::iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!sc\+::list\+::iterator@{sc\+::list\+::iterator}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::iterator\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list_1_1iterator}{iterator} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compara dois iteradores. \begin{DoxyReturn}{Returns}
+true caso sejam iguais e false caso contrario. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/elexandro/\+Documentos/\+Doubly-\/\+Linked-\/\+List/include/list.\+h\end{DoxyCompactItemize}

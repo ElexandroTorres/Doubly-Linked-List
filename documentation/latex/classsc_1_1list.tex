@@ -1,0 +1,506 @@
+\hypertarget{classsc_1_1list}{}\section{sc\+:\+:list$<$ T $>$ Class Template Reference}
+\label{classsc_1_1list}\index{sc\+::list$<$ T $>$@{sc\+::list$<$ T $>$}}
+
+
+Classe list.  
+
+
+
+
+{\ttfamily \#include $<$list.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em Const\+\_\+\+Iterator. \end{DoxyCompactList}\item 
+class \hyperlink{classsc_1_1list_1_1iterator}{iterator}
+\begin{DoxyCompactList}\small\item\em Iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsc_1_1list_acbac64cff34d45bb9c61771493db48ec}\label{classsc_1_1list_acbac64cff34d45bb9c61771493db48ec}} 
+using {\bfseries size\+\_\+type} = unsigned long
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsc_1_1list_ac7b95807230114dc58f2b1156cb3cdba}\label{classsc_1_1list_ac7b95807230114dc58f2b1156cb3cdba}} 
+\hyperlink{classsc_1_1list_ac7b95807230114dc58f2b1156cb3cdba}{list} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsc_1_1list_a38c946e7fe092c01ea0c0fc3be19d11c}\label{classsc_1_1list_a38c946e7fe092c01ea0c0fc3be19d11c}} 
+\hyperlink{classsc_1_1list_a38c946e7fe092c01ea0c0fc3be19d11c}{list} (size\+\_\+type count)
+\begin{DoxyCompactList}\small\item\em Construtor explicit. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsc_1_1list_a1fe5b60798e979cb0a5b1663d64ec69b}\label{classsc_1_1list_a1fe5b60798e979cb0a5b1663d64ec69b}} 
+\hyperlink{classsc_1_1list_a1fe5b60798e979cb0a5b1663d64ec69b}{list} (const \hyperlink{classsc_1_1list}{list} \&other)
+\begin{DoxyCompactList}\small\item\em Construtor copia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsc_1_1list_a142545a98bc5fec38606bf7000620864}\label{classsc_1_1list_a142545a98bc5fec38606bf7000620864}} 
+{\footnotesize template$<$typename Input\+It $>$ }\\\hyperlink{classsc_1_1list_a142545a98bc5fec38606bf7000620864}{list} (Input\+It first, Input\+It last)
+\begin{DoxyCompactList}\small\item\em Construtor a partir de um range. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsc_1_1list_ae85152bcf538c929944790b1c30d3b22}\label{classsc_1_1list_ae85152bcf538c929944790b1c30d3b22}} 
+\hyperlink{classsc_1_1list_ae85152bcf538c929944790b1c30d3b22}{list} (std\+::initializer\+\_\+list$<$ T $>$ ilist)
+\begin{DoxyCompactList}\small\item\em Construtor com lista inicializadora. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsc_1_1list_a3399256b9e2fa57bee383c2421722214}\label{classsc_1_1list_a3399256b9e2fa57bee383c2421722214}} 
+\hyperlink{classsc_1_1list_a3399256b9e2fa57bee383c2421722214}{$\sim$list} ()
+\begin{DoxyCompactList}\small\item\em Destrutor. \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1list}{list} \& \hyperlink{classsc_1_1list_abc045e02a12cec8bf19c90c909b3a735}{operator=} (const \hyperlink{classsc_1_1list}{list} \&other)
+\item 
+\hyperlink{classsc_1_1list}{list} \& \hyperlink{classsc_1_1list_a51c75e5f78c7bb99631e954bf5510918}{operator=} (std\+::initializer\+\_\+list$<$ T $>$ ilist)
+\item 
+size\+\_\+type \hyperlink{classsc_1_1list_a0fe585f3f9e33058294c3a590c7bfdea}{size} () const
+\item 
+void \hyperlink{classsc_1_1list_aece86319a40d15b88fd1a981ba1a226e}{clear} ()
+\item 
+bool \hyperlink{classsc_1_1list_a8599ccd8f27e0f39a1c3051cd9d05bdb}{empty} ()
+\item 
+void \hyperlink{classsc_1_1list_a24a7b8a81765dfe0351ddb263bc6d754}{push\+\_\+front} (const T \&value)
+\item 
+void \hyperlink{classsc_1_1list_a1d77cdaeacca7959989873617a753c96}{push\+\_\+back} (const T \&value)
+\item 
+void \hyperlink{classsc_1_1list_a3d6fc0a4f2c1db7c74af5a482c1a03ca}{pop\+\_\+back} ()
+\item 
+void \hyperlink{classsc_1_1list_ab3fbf66643f4356cf0c1947bd4fdf48e}{pop\+\_\+front} ()
+\item 
+const T \& \hyperlink{classsc_1_1list_a4835abb7fb3362c357d534db60e0ba6e}{back} () const
+\item 
+const T \& \hyperlink{classsc_1_1list_a5e27dee267cd155aaeb87698a2f63da5}{front} () const
+\item 
+void \hyperlink{classsc_1_1list_a5c8aa119bd13c2a577e4ab6ba339c12e}{assign} (const size\+\_\+type \&count, const T \&value)
+\item 
+void \hyperlink{classsc_1_1list_a495ac9f4a80b40ba7d37e6badf24445f}{assign} (std\+::initializer\+\_\+list$<$ T $>$ ilist)
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a2fa015e137583d7142933500b34f1e29}{begin} ()
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a48429f0cf3d990fa6dfd5140e6aa95a7}{end} ()
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_ab128f2a6caa171927474485d9d2f05fc}{cbegin} () const
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_a058f029ebf0d6b5d66c78bb028b45eda}{cend} () const
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a06b47c35531035c93c34d20b39277c99}{insert} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} pos, const T \&value)
+\item 
+{\footnotesize template$<$typename In\+Itr $>$ }\\\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a50f5e86e5e8e4bce9ea2401a38a4719a}{insert} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} pos, In\+Itr first, In\+Itr last)
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a4de4bcd7f91152013c60134dd836d3b5}{insert} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} pos, std\+::initializer\+\_\+list$<$ T $>$ ilist)
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_a31c2bd11beedf339ba709e61330daf57}{insert} (\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} pos, const T \&value)
+\item 
+{\footnotesize template$<$typename In\+Itr $>$ }\\\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_ad701ef0de9782ecc791994051c75f30c}{insert} (\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} pos, In\+Itr first, In\+Itr last)
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_ada86bd4ad7c15b8b289835daa9e7310d}{insert} (\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} pos, std\+::initializer\+\_\+list$<$ T $>$ ilist)
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_a12a195a7ebaf3455f245caa852b44a9b}{erase} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} pos)
+\item 
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list_ae796301c82f58d72d10ec7c30fb0b024}{erase} (\hyperlink{classsc_1_1list_1_1iterator}{iterator} first, \hyperlink{classsc_1_1list_1_1iterator}{iterator} last)
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_a3ae9390d6ebdea866b9e4b934d072eac}{erase} (\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} pos)
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_a2b2b7556fbd15d54094713647750de03}{erase} (\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} first, \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} last)
+\item 
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list_a8709bb66990997b0602888b8d0c99860}{find} (const T \&value) const
+\item 
+bool \hyperlink{classsc_1_1list_a6399b703b94a2940567cf6324928fc3b}{operator==} (const \hyperlink{classsc_1_1list}{list} \&other)
+\item 
+bool \hyperlink{classsc_1_1list_ad7aaf392a76a163e522bf73d8868c3cf}{operator!=} (const \hyperlink{classsc_1_1list}{list} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classsc_1_1list_a6b15619e773f20f5e37890eaac098b78}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classsc_1_1list}{list}$<$ T $>$ \&l)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class sc\+::list$<$ T $>$}
+
+Classe list. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classsc_1_1list_a5c8aa119bd13c2a577e4ab6ba339c12e}\label{classsc_1_1list_a5c8aa119bd13c2a577e4ab6ba339c12e}} 
+\index{sc\+::list@{sc\+::list}!assign@{assign}}
+\index{assign@{assign}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::assign (\begin{DoxyParamCaption}\item[{const size\+\_\+type \&}]{count,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Substitui o conteudo da lista com uma certa quantiade de uma determinado valor. 
+\begin{DoxyParams}{Parameters}
+{\em count} & Quantidade de elementos que terão na lista. \\
+\hline
+{\em value} & Valor que será inserido em toda a lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsc_1_1list_a495ac9f4a80b40ba7d37e6badf24445f}\label{classsc_1_1list_a495ac9f4a80b40ba7d37e6badf24445f}} 
+\index{sc\+::list@{sc\+::list}!assign@{assign}}
+\index{assign@{assign}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{assign()}{assign()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::assign (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ T $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Substituí o conteudo da lista com o conteudo de uma lista inicializadora. 
+\begin{DoxyParams}{Parameters}
+{\em ilist} & Lista inicializadora. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsc_1_1list_a4835abb7fb3362c357d534db60e0ba6e}\label{classsc_1_1list_a4835abb7fb3362c357d534db60e0ba6e}} 
+\index{sc\+::list@{sc\+::list}!back@{back}}
+\index{back@{back}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+O elemento no final da lista. Caso a lista esteja vazia, retorna um std\+::range\+\_\+error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a2fa015e137583d7142933500b34f1e29}\label{classsc_1_1list_a2fa015e137583d7142933500b34f1e29}} 
+\index{sc\+::list@{sc\+::list}!begin@{begin}}
+\index{begin@{begin}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Um iterator para o inicio da lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_ab128f2a6caa171927474485d9d2f05fc}\label{classsc_1_1list_ab128f2a6caa171927474485d9d2f05fc}} 
+\index{sc\+::list@{sc\+::list}!cbegin@{cbegin}}
+\index{cbegin@{cbegin}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{cbegin()}{cbegin()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Um iterator constante para o inicio da lista. Primeiro elemento. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a058f029ebf0d6b5d66c78bb028b45eda}\label{classsc_1_1list_a058f029ebf0d6b5d66c78bb028b45eda}} 
+\index{sc\+::list@{sc\+::list}!cend@{cend}}
+\index{cend@{cend}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{cend()}{cend()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Um iterator constante para o final da lista. Após o ultimo elemento. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_aece86319a40d15b88fd1a981ba1a226e}\label{classsc_1_1list_aece86319a40d15b88fd1a981ba1a226e}} 
+\index{sc\+::list@{sc\+::list}!clear@{clear}}
+\index{clear@{clear}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Limpa a lista, excluindo os elementos e liberando a memoria dos nós que os armazena. \mbox{\Hypertarget{classsc_1_1list_a8599ccd8f27e0f39a1c3051cd9d05bdb}\label{classsc_1_1list_a8599ccd8f27e0f39a1c3051cd9d05bdb}} 
+\index{sc\+::list@{sc\+::list}!empty@{empty}}
+\index{empty@{empty}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Verifica se a lista está vazia. \begin{DoxyReturn}{Returns}
+true caso esteja vazia e false caso contrario. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a48429f0cf3d990fa6dfd5140e6aa95a7}\label{classsc_1_1list_a48429f0cf3d990fa6dfd5140e6aa95a7}} 
+\index{sc\+::list@{sc\+::list}!end@{end}}
+\index{end@{end}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+Um iterator para o final da lista. m\+\_\+tail. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a12a195a7ebaf3455f245caa852b44a9b}\label{classsc_1_1list_a12a195a7ebaf3455f245caa852b44a9b}} 
+\index{sc\+::list@{sc\+::list}!erase@{erase}}
+\index{erase@{erase}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1iterator}{iterator}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apaga um elemento da lista dado pela posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Iterator para a posiçao a qual o elemento será apagado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elemento seguinte a pos antes de ser apagado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_ae796301c82f58d72d10ec7c30fb0b024}\label{classsc_1_1list_ae796301c82f58d72d10ec7c30fb0b024}} 
+\index{sc\+::list@{sc\+::list}!erase@{erase}}
+\index{erase@{erase}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1iterator}{iterator}}]{first,  }\item[{\hyperlink{classsc_1_1list_1_1iterator}{iterator}}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove os elementos da lista que estão no range dado. 
+\begin{DoxyParams}{Parameters}
+{\em first} & Iterator para o inicio do range. \\
+\hline
+{\em last} & Iterator para o final do range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elemento seguinte ao range apagado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a3ae9390d6ebdea866b9e4b934d072eac}\label{classsc_1_1list_a3ae9390d6ebdea866b9e4b934d072eac}} 
+\index{sc\+::list@{sc\+::list}!erase@{erase}}
+\index{erase@{erase}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Apaga um elemento da lista dado pela posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Iterator para a posiçao a qual o elemento será apagado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elemento seguinte a pos antes de ser apagado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a2b2b7556fbd15d54094713647750de03}\label{classsc_1_1list_a2b2b7556fbd15d54094713647750de03}} 
+\index{sc\+::list@{sc\+::list}!erase@{erase}}
+\index{erase@{erase}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}}]{first,  }\item[{\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove os elementos da lista que estão no range dado. 
+\begin{DoxyParams}{Parameters}
+{\em first} & \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} para o inicio do range. \\
+\hline
+{\em last} & \hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} para o final do range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elemento seguinte ao range apagado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a8709bb66990997b0602888b8d0c99860}\label{classsc_1_1list_a8709bb66990997b0602888b8d0c99860}} 
+\index{sc\+::list@{sc\+::list}!find@{find}}
+\index{find@{find}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Procura um determinado valor na lista. 
+\begin{DoxyParams}{Parameters}
+{\em value} & Valor a ser procurado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} para a posição em que value se encontra na lista. Caso não seja encotnrado, será retornado o endereço do final da lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a5e27dee267cd155aaeb87698a2f63da5}\label{classsc_1_1list_a5e27dee267cd155aaeb87698a2f63da5}} 
+\index{sc\+::list@{sc\+::list}!front@{front}}
+\index{front@{front}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+O elemento no inicio da lista. Caso a lista esteja vazia, retorna um std\+::range\+\_\+error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a06b47c35531035c93c34d20b39277c99}\label{classsc_1_1list_a06b47c35531035c93c34d20b39277c99}} 
+\index{sc\+::list@{sc\+::list}!insert@{insert}}
+\index{insert@{insert}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1iterator}{iterator}}]{pos,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insere um elemento antes da posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Iterator para a posição a qual o elemento adicionado irá precedela. \\
+\hline
+{\em value} & Valor a qual será adicionado na lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um iterator para a posição em que o elemento foi adicionado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a50f5e86e5e8e4bce9ea2401a38a4719a}\label{classsc_1_1list_a50f5e86e5e8e4bce9ea2401a38a4719a}} 
+\index{sc\+::list@{sc\+::list}!insert@{insert}}
+\index{insert@{insert}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename In\+Itr $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1iterator}{iterator}}]{pos,  }\item[{In\+Itr}]{first,  }\item[{In\+Itr}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insere um range de elementos antes da posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Posição a qual os elementos adicionados irão presceder. \\
+\hline
+{\em first} & Inicio do range de elementos. \\
+\hline
+{\em last} & Final do range de elementos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator para o ultimo elemento do range na lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a4de4bcd7f91152013c60134dd836d3b5}\label{classsc_1_1list_a4de4bcd7f91152013c60134dd836d3b5}} 
+\index{sc\+::list@{sc\+::list}!insert@{insert}}
+\index{insert@{insert}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1iterator}{iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1iterator}{iterator}}]{pos,  }\item[{std\+::initializer\+\_\+list$<$ T $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insere uma lista inicializadora de elementos antes da posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Posição a qual os elementos adicionados irão presceder. \\
+\hline
+{\em ilist} & Lista inicializadora. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Iterator para o ultimo da lista inicializadora na lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a31c2bd11beedf339ba709e61330daf57}\label{classsc_1_1list_a31c2bd11beedf339ba709e61330daf57}} 
+\index{sc\+::list@{sc\+::list}!insert@{insert}}
+\index{insert@{insert}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}}]{pos,  }\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insere um elemento antes da posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Iterator para a posição a qual o elemento adicionado irá precedela. \\
+\hline
+{\em value} & Valor a qual será adicionado na lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um iterator para a posição em que o elemento foi adicionado. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_ad701ef0de9782ecc791994051c75f30c}\label{classsc_1_1list_ad701ef0de9782ecc791994051c75f30c}} 
+\index{sc\+::list@{sc\+::list}!insert@{insert}}
+\index{insert@{insert}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+template$<$typename In\+Itr $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}}]{pos,  }\item[{In\+Itr}]{first,  }\item[{In\+Itr}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insere um range de elementos antes da posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Posição a qual os elementos adicionados irão presceder. \\
+\hline
+{\em first} & Inicio do range de elementos. \\
+\hline
+{\em last} & Final do range de elementos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} para o ultimo elemento do range na lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_ada86bd4ad7c15b8b289835daa9e7310d}\label{classsc_1_1list_ada86bd4ad7c15b8b289835daa9e7310d}} 
+\index{sc\+::list@{sc\+::list}!insert@{insert}}
+\index{insert@{insert}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator}}]{pos,  }\item[{std\+::initializer\+\_\+list$<$ T $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Insere uma lista inicializadora de elementos antes da posição pos. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & Posição a qual os elementos adicionados irão presceder. \\
+\hline
+{\em ilist} & Lista inicializadora. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsc_1_1list_1_1const__iterator}{const\+\_\+iterator} para o ultimo da lista inicializadora na lista. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_ad7aaf392a76a163e522bf73d8868c3cf}\label{classsc_1_1list_ad7aaf392a76a163e522bf73d8868c3cf}} 
+\index{sc\+::list@{sc\+::list}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list}{list}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compara duas listas. \begin{DoxyReturn}{Returns}
+true caso sejam diferentes e false caso contrario. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_abc045e02a12cec8bf19c90c909b3a735}\label{classsc_1_1list_abc045e02a12cec8bf19c90c909b3a735}} 
+\index{sc\+::list@{sc\+::list}!operator=@{operator=}}
+\index{operator=@{operator=}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list}{list}\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list}{list}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operador de atribuição a partir de outra lista. \mbox{\Hypertarget{classsc_1_1list_a51c75e5f78c7bb99631e954bf5510918}\label{classsc_1_1list_a51c75e5f78c7bb99631e954bf5510918}} 
+\index{sc\+::list@{sc\+::list}!operator=@{operator=}}
+\index{operator=@{operator=}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classsc_1_1list}{list}\& \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ T $>$}]{ilist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Operador de atribuição a partir de uma lista inicializadora. \mbox{\Hypertarget{classsc_1_1list_a6399b703b94a2940567cf6324928fc3b}\label{classsc_1_1list_a6399b703b94a2940567cf6324928fc3b}} 
+\index{sc\+::list@{sc\+::list}!operator==@{operator==}}
+\index{operator==@{operator==}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classsc_1_1list}{list}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Compara duas listas. \begin{DoxyReturn}{Returns}
+true caso sejam iguais e false caso contrario. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsc_1_1list_a3d6fc0a4f2c1db7c74af5a482c1a03ca}\label{classsc_1_1list_a3d6fc0a4f2c1db7c74af5a482c1a03ca}} 
+\index{sc\+::list@{sc\+::list}!pop\+\_\+back@{pop\+\_\+back}}
+\index{pop\+\_\+back@{pop\+\_\+back}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{pop\+\_\+back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove o elemento no final da lista. \mbox{\Hypertarget{classsc_1_1list_ab3fbf66643f4356cf0c1947bd4fdf48e}\label{classsc_1_1list_ab3fbf66643f4356cf0c1947bd4fdf48e}} 
+\index{sc\+::list@{sc\+::list}!pop\+\_\+front@{pop\+\_\+front}}
+\index{pop\+\_\+front@{pop\+\_\+front}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{pop\+\_\+front()}{pop\_front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::pop\+\_\+front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove o elemento no inicio da lista. \mbox{\Hypertarget{classsc_1_1list_a1d77cdaeacca7959989873617a753c96}\label{classsc_1_1list_a1d77cdaeacca7959989873617a753c96}} 
+\index{sc\+::list@{sc\+::list}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{push\+\_\+back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adiciona um determinado valor no final da lista. 
+\begin{DoxyParams}{Parameters}
+{\em value} & Valor a ser adicionado no final da lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsc_1_1list_a24a7b8a81765dfe0351ddb263bc6d754}\label{classsc_1_1list_a24a7b8a81765dfe0351ddb263bc6d754}} 
+\index{sc\+::list@{sc\+::list}!push\+\_\+front@{push\+\_\+front}}
+\index{push\+\_\+front@{push\+\_\+front}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{push\+\_\+front()}{push\_front()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adiciona um determinado valor no inicio da lista. 
+\begin{DoxyParams}{Parameters}
+{\em value} & Valor a ser adicionado no inicio da lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsc_1_1list_a0fe585f3f9e33058294c3a590c7bfdea}\label{classsc_1_1list_a0fe585f3f9e33058294c3a590c7bfdea}} 
+\index{sc\+::list@{sc\+::list}!size@{size}}
+\index{size@{size}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+type \hyperlink{classsc_1_1list}{sc\+::list}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+O numero de elementos da lista. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classsc_1_1list_a6b15619e773f20f5e37890eaac098b78}\label{classsc_1_1list_a6b15619e773f20f5e37890eaac098b78}} 
+\index{sc\+::list@{sc\+::list}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sc\+::list@{sc\+::list}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \hyperlink{classsc_1_1list}{list}$<$ T $>$ \&}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Operador de impressão. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/elexandro/\+Documentos/\+Doubly-\/\+Linked-\/\+List/include/list.\+h\end{DoxyCompactItemize}
