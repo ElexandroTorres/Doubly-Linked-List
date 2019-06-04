@@ -11,14 +11,12 @@ namespace sc {
 				T data; //<! Dados do elemento.
 				Node *prev; //<! Nó que aponta para o Nó anterior.
 				Node *next; //<! Nó que aponta para o Nó seguinte.
-				/// Construtor basico.
+				/// Construtor basico do nó.
 				Node(const T &data_ = T(), Node *prev_ = nullptr, Node *next_ = nullptr) {
 					data = data_;
 					prev = prev_;
 					next = next_;
 				}
-
-
 			};
 
 			/*! Cria os nós principais da lista duplamente encadeada. Nó cabeça e Nó Calda. */
@@ -76,18 +74,18 @@ namespace sc {
 						--(*this);
 						return temp;
 					}
-					/*! Operator =, Atribuí um iterator a outro.*/
+					/*! Operator =, Atribuí um const_iterator a outro.*/
 					const_iterator &operator=(const const_iterator &it) {
 						current = it.current;
 						return *this;
 					}
-					/*! Compara dois iteradores. 
+					/*! Compara dois iteradores constantes. 
 					 * @return true caso sejam iguais e false caso contrario. 
 					*/
 					bool operator==(const const_iterator &rhs) const {
 						return current == rhs.current;
 					}
-					/*! Compara dois iteradores. 
+					/*! Compara dois iteradores constantes. 
 					 * @return true caso sejam diferentes e false caso contrario. 
 					*/
 					bool operator!=(const const_iterator &rhs) const {
@@ -109,9 +107,9 @@ namespace sc {
 					using iterator_category = std::bidirectional_iterator_tag;
 					using value_type = T; //!< Tipo de dado.
 					using pointer = T*; //!< Ponteiro para o tipo de dado.
-
+					/*! Construtor padrão. */
 					iterator() : current{nullptr} {/* Vazio */}
-
+					/*! Construtor copia. */
 					iterator(const iterator &other) {
 						current = other.current;
 					}
@@ -123,48 +121,50 @@ namespace sc {
 					T &operator*() {
 						return current->data;
 					}
-
+					/*! Operator++, avança para o proximo nó. */
 					iterator &operator++() {
 						current = current->next;
 						return *this;
 					}
-
+					/*! Operator++, Avança para o proximo nó, mas retorna a posição antes de avançada. */
 					iterator operator++(int) {
 						iterator temp = *this;
 						++(*this);
 						return temp;
 					}
-
+					/*! Operator--, Regride para o nó anterior. */
 					iterator &operator--() {
 						current = current->prev;
 						return *this;
 					}
-
+					/*! Operator--, Regride para o nó anterior, mas retorna a posição antes da regreção. */
 					iterator operator--(int) {
 						iterator temp = *this;
 						--(*this);
 						return temp;
 					}
-
+					/*! Operator =, Atribuí um iterator a outro.*/
 					iterator &operator=(const iterator &it) {
 						current = it.current;
 						return *this;
 					}
-
+					/*! Compara dois iteradores. 
+					 * @return true caso sejam iguais e false caso contrario. 
+					*/
 					bool operator==(const iterator &rhs) const {
 						return current == rhs.current;
 					}
+					/*! Compara dois iteradores constantes. 
+					 * @return true caso sejam diferentes e false caso contrario. 
+					*/
 					bool operator!=(const iterator &rhs) const {
 						return !(*this == rhs);
 					}
 					
 					
 				protected:
-
 					Node *current;
-
 					iterator(Node *p) : current{p} {/*vazio.*/}
-
 					friend class list<T>;
 
 			};
@@ -390,6 +390,7 @@ namespace sc {
 			}
 
 			/* Insert */
+
 			/*!
 			 * Insere um elemento antes da posição pos.
 			 * @param pos Iterator para a posição a qual o elemento adicionado irá precedela.
@@ -448,8 +449,6 @@ namespace sc {
 				m_size--; // Diminui o tamanho da lista.
 				return nextTemp; // Nó seguinte a pós antes de ser apagado.
 			}
-
-
 			/*!
 			 * Remove os elementos da lista que estão no range dado.
 			 * @param first Iterator para o inicio do range.
@@ -464,7 +463,11 @@ namespace sc {
 			}
 
 
-
+			/*!
+			 * Procura um determinado valor na lista.
+			 * @param value Valor a ser procurado.
+			 * @return const_iterator para a posição em que value se encontra na lista. Caso não seja encotnrado, será retornado o endereço do final da lista.
+			*/
 			const_iterator find(const T &value) const {
 				const_iterator avance = m_head->next; // Inicia o avance na posição do primeiro elemento.
 				while(avance != m_tail) {
@@ -476,8 +479,6 @@ namespace sc {
 				}
 				return m_tail;
 			}
-
-
 			
 			/*!
 			 * Compara duas listas.
@@ -512,6 +513,7 @@ namespace sc {
 				return !(*this == other); // Caso as listas não sejam iguais elas são diferentes.
 			}
 
+			/*! Operador de impressão. */
 			friend std::ostream &operator<<(std::ostream &out, const list<T> &l) {
 				Node *it = l.m_head->next;
 				while(it != l.m_tail) {
