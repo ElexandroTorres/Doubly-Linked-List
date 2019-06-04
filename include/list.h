@@ -448,6 +448,8 @@ namespace sc {
 				m_size--; // Diminui o tamanho da lista.
 				return nextTemp; // Nó seguinte a pós antes de ser apagado.
 			}
+
+
 			/*!
 			 * Remove os elementos da lista que estão no range dado.
 			 * @param first Iterator para o inicio do range.
@@ -464,16 +466,17 @@ namespace sc {
 
 
 			const_iterator find(const T &value) const {
-				Node *avance = m_head->next; // Inicia o avance na posição do primeiro elemento.
+				const_iterator avance = m_head->next; // Inicia o avance na posição do primeiro elemento.
 				while(avance != m_tail) {
 					// Caso encontre o valor na lista, retornar um iterator para a sua posição.
-					if(avance->data == value) {
+					if(*avance == value) {
 						return avance;
 					}
-					avance = avance->next;
+					avance++;
 				}
 				return m_tail;
 			}
+
 
 			
 			/*!
