@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/elexandro/Documentos/Doubly-Linked-List/src/main.cpp" "/home/elexandro/Documentos/Doubly-Linked-List/build/CMakeFiles/list.dir/src/main.cpp.o"
+  "/home/xaninho/Documentos/Doubly-Linked-List/src/main.cpp" "/home/xaninho/Documentos/Doubly-Linked-List/build/CMakeFiles/list.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

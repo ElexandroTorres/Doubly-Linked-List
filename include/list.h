@@ -51,7 +51,7 @@ namespace sc {
 						current = other.current;
 					}
 					/*! Operador*, returna o dado presente no iterator. */
-					const reference operator*() const {
+					const T & operator*() const {
 						return current->data;
 					}
 					/*! Operator++, avança para o proximo nó. */
@@ -461,16 +461,20 @@ namespace sc {
 				return last;
 			}
 
-			//* Metodo para imprimir a lista. TEMPORARIO. *//
-			void print() {
-				Node *it = m_head->next;
-				while(it != m_tail) {
-					std::cout << it->data << " ";
-					it = it->next;
+
+
+			const_iterator find(const T &value) const {
+				Node *avance = m_head->next; // Inicia o avance na posição do primeiro elemento.
+				while(avance != m_tail) {
+					// Caso encontre o valor na lista, retornar um iterator para a sua posição.
+					if(avance->data == value) {
+						return avance;
+					}
+					avance = avance->next;
 				}
-				std::cout << "\n";
+				return m_tail;
 			}
-			//* Metodo para imprimir a lista. TEMPORARIO. *//
+
 			
 			/*!
 			 * Compara duas listas.
@@ -505,13 +509,22 @@ namespace sc {
 				return !(*this == other); // Caso as listas não sejam iguais elas são diferentes.
 			}
 
+			friend std::ostream &operator<<(std::ostream &out, const list<T> &l) {
+				Node *it = l.m_head->next;
+				while(it != l.m_tail) {
+					out << it->data << " ";
+					it = it->next;
+				}
+				return out;
+			}
+
 		private:
 			size_type m_size = 0; // Toda lista criada tem inicialmente tamanho zero.
 			Node *m_head; // Ponteiro nó cabeça.
 			Node *m_tail; // Ponteiro nó calda.
 						
 	};
-	
+
 
 }
 

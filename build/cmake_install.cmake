@@ -1,4 +1,4 @@
-# Install script for directory: /home/elexandro/Documentos/Doubly-Linked-List
+# Install script for directory: /home/xaninho/Documentos/Doubly-Linked-List
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/elexandro/Documentos/Doubly-Linked-List/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xaninho/Documentos/Doubly-Linked-List/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
